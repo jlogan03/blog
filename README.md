@@ -9,7 +9,7 @@
   </a>
 </div>
 
-| Title   | Topics            | Posted     | Last Modified |
-| -----   |--------           | ------     | ------------- |
-| interpn | Interpolation     | 2023-11-24 | 2023-11-30    |
-| strobe  | Array expressions | 2023-10-21 | -             |
+| Title                         | Topics            | Posted     | Last Modified |
+| -----                         |--------           | ------     | ------------- |
+| [interpn](./posts/interpn.md) | Interpolation     | 2023-11-24 | 2023-11-30    |
+| [strobe](./posts/strobe.md)   | Array expressions | 2023-10-21 | -             |
