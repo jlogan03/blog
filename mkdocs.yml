@@ -81,6 +81,3 @@ plugins:
   - search
   - redirects:
       redirect_maps:
-
-# nav:
-#   - Home: index.md

@@ -2,8 +2,8 @@
 draft: false 
 date: 2023-11-24
 categories:
-  - scientific computing
-  - embedded
+  - Scientific Computing
+  - Embedded
   - no-std
 ---
 
