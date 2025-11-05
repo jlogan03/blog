@@ -1,7 +1,7 @@
 site_name: jlogan
 site_url: https://jlogan.dev
-repo_url: https://github.com/jlogan03/blog
-repo_name: blog
+# repo_url: https://github.com/jlogan03/blog
+# repo_name: blog
 copyright: Copyright &copy; 2025 James Logan
 
 extra:
@@ -17,7 +17,7 @@ extra:
   consent:
     title: Cookie consent
     description: >-
-      I use cookies to recognize repeated visits and preferences.
+      I use cookies to recognize repeated visits and post traffic.
   analytics:
     provider: google
     property: G-PYQ9SVJZ2J
@@ -40,9 +40,9 @@ theme:
   icon:
     repo: fontawesome/brands/git-alt
   features:
-    - navigation.tabs
-    - navigation.tabs.sticky
-    - navigation.footer
+    # - navigation.tabs
+    # - navigation.tabs.sticky
+    # - navigation.footer
     - search.suggest
 
 extra_css:
@@ -68,8 +68,11 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 
 plugins:
+  - blog:
+      blog_dir: .
+      blog_toc: true
   - rss:
-      match_path: blog/posts/.* 
+      match_path: ./posts/.* 
       date_from_meta:
         as_creation: date
       categories:
@@ -79,6 +82,5 @@ plugins:
   - redirects:
       redirect_maps:
 
-nav:
-  - Home: index.md
-  - Blog: blog/index.md
+# nav:
+#   - Home: index.md

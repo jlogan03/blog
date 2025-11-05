@@ -1,4 +1,11 @@
-# 2023-10-21: Array Expressions without Allocation (in Rust)
+---
+draft: false 
+date: 2023-10-21
+categories:
+  - scientific computing
+---
+
+# 2023-10-21: Array Expressions without Allocation
 
 <div>
   <a href=https://github.com/jlogan03>

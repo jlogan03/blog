@@ -1,4 +1,11 @@
-# 2023-11-24: Building a Hypercube Interpolator (in Rust)
+---
+draft: false 
+date: 2023-11-24
+categories:
+  - scientific computing
+---
+
+# 2023-11-24: Building a Hypercube Interpolator
 
 <div>
   <a href=https://github.com/jlogan03>
