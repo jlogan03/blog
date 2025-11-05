@@ -3,6 +3,8 @@ draft: false
 date: 2023-10-21
 categories:
   - scientific computing
+  - embedded
+  - no-std
 ---
 
 # 2023-10-21: Array Expressions without Allocation

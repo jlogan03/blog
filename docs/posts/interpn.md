@@ -3,6 +3,8 @@ draft: false
 date: 2023-11-24
 categories:
   - scientific computing
+  - embedded
+  - no-std
 ---
 
 # 2023-11-24: Building a Hypercube Interpolator
