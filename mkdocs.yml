@@ -24,7 +24,7 @@ extra:
 
 theme:
   name: material
-  custom_dir: overrides
+  # custom_dir: overrides
   highlightjs: true
   hljs_languages:
     - python
@@ -78,15 +78,7 @@ plugins:
   - search
   - redirects:
       redirect_maps:
-        API.md: https://docs.rs/deimos
 
 nav:
   - Home: index.md
-  - Products: products/index.md
-  - System: system.md
-  - Use-Cases:
-    - "Use-Case: Turbine Engine": usecases/turbine.md
-    - "Use-Case: Motor Control": usecases/motor.md
-    - "Use-Case: Electroplating": usecases/plating.md
   - Blog: blog/index.md
-  - API.md
