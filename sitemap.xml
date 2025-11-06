@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://jlogan.dev/</loc>
+         <lastmod>2025-11-06</lastmod>
+    </url>
+    <url>
+         <loc>https://jlogan.dev/2023/11/24/2023-11-24-building-a-hypercube-interpolator/</loc>
+         <lastmod>2025-11-06</lastmod>
+    </url>
+    <url>
+         <loc>https://jlogan.dev/2023/10/21/2023-10-21-array-expressions-without-allocation/</loc>
+         <lastmod>2025-11-06</lastmod>
+    </url>
+    <url>
+         <loc>https://jlogan.dev/archive/2023/</loc>
+         <lastmod>2025-11-06</lastmod>
+    </url>
+    <url>
+         <loc>https://jlogan.dev/category/scientific-computing/</loc>
+         <lastmod>2025-11-06</lastmod>
+    </url>
+    <url>
+         <loc>https://jlogan.dev/category/embedded/</loc>
+         <lastmod>2025-11-06</lastmod>
+    </url>
+    <url>
+         <loc>https://jlogan.dev/category/no-std/</loc>
+         <lastmod>2025-11-06</lastmod>
+    </url>
+</urlset>
