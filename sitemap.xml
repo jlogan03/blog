@@ -5,27 +5,31 @@
          <lastmod>2025-11-06</lastmod>
     </url>
     <url>
-         <loc>https://jlogan.dev/2023/11/24/2023-11-24-building-a-hypercube-interpolator/</loc>
+         <loc>https://jlogan.dev/blog/</loc>
          <lastmod>2025-11-06</lastmod>
     </url>
     <url>
-         <loc>https://jlogan.dev/2023/10/21/2023-10-21-array-expressions-without-allocation/</loc>
+         <loc>https://jlogan.dev/blog/2023/11/24/2023-11-24-building-a-hypercube-interpolator/</loc>
          <lastmod>2025-11-06</lastmod>
     </url>
     <url>
-         <loc>https://jlogan.dev/archive/2023/</loc>
+         <loc>https://jlogan.dev/blog/2023/10/21/2023-10-21-array-expressions-without-allocation/</loc>
          <lastmod>2025-11-06</lastmod>
     </url>
     <url>
-         <loc>https://jlogan.dev/category/scientific-computing/</loc>
+         <loc>https://jlogan.dev/blog/archive/2023/</loc>
          <lastmod>2025-11-06</lastmod>
     </url>
     <url>
-         <loc>https://jlogan.dev/category/embedded/</loc>
+         <loc>https://jlogan.dev/blog/category/scientific-computing/</loc>
          <lastmod>2025-11-06</lastmod>
     </url>
     <url>
-         <loc>https://jlogan.dev/category/no-std/</loc>
+         <loc>https://jlogan.dev/blog/category/embedded/</loc>
+         <lastmod>2025-11-06</lastmod>
+    </url>
+    <url>
+         <loc>https://jlogan.dev/blog/category/no-std/</loc>
          <lastmod>2025-11-06</lastmod>
     </url>
 </urlset>

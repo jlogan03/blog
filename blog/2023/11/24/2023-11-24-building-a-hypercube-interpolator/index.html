@@ -8,29 +8,29 @@
       
       
       
-        <link rel="canonical" href="https://jlogan.dev/2023/11/24/2023-11-24-building-a-hypercube-interpolator/">
+        <link rel="canonical" href="https://jlogan.dev/blog/2023/11/24/2023-11-24-building-a-hypercube-interpolator/">
       
       
         <link rel="prev" href="../../../10/21/2023-10-21-array-expressions-without-allocation/">
       
       
       
-        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../feed_rss_created.xml">
-        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../../feed_rss_updated.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../../../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../../../assets/logo.svg">
+      <link rel="icon" href="../../../../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>2023-11-24: Building a Hypercube Interpolator - jlogan</title>
+        <title>2023-11-24: Building a Hypercube Interpolator - James Logan's Personal Site</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -49,9 +49,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -103,9 +103,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="jlogan" class="md-header__button md-logo" aria-label="jlogan" data-md-component="logo">
+    <a href="../../../../.." title="James Logan&#39;s Personal Site" class="md-header__button md-logo" aria-label="James Logan's Personal Site" data-md-component="logo">
       
-  <img src="../../../../assets/logo.svg" alt="logo">
+  <img src="../../../../../assets/logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -116,7 +116,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            jlogan
+            James Logan's Personal Site
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -216,12 +216,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="jlogan" class="md-nav__button md-logo" aria-label="jlogan" data-md-component="logo">
+    <a href="../../../../.." title="James Logan&#39;s Personal Site" class="md-nav__button md-logo" aria-label="James Logan's Personal Site" data-md-component="logo">
       
-  <img src="../../../../assets/logo.svg" alt="logo">
+  <img src="../../../../../assets/logo.svg" alt="logo">
 
     </a>
-    jlogan
+    James Logan's Personal Site
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -230,19 +230,15 @@
       
   
   
-    
   
   
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      <a href="../../../.." class="md-nav__link">
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Blog
+    About Me
     
   </span>
   
@@ -256,9 +252,72 @@
       
   
   
+    
+  
   
   
     
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
     
     
     
@@ -267,10 +326,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
   
@@ -283,8 +342,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Archive
           </label>
@@ -321,14 +380,23 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -337,10 +405,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   
@@ -353,8 +421,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Categories
           </label>
@@ -430,6 +498,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -732,7 +808,7 @@
           <nav class="md-nav md-nav--primary">
             <div class="md-post__back">
               <div class="md-nav__title md-nav__container">
-                <a href="../../../.." class="md-nav__link">
+                <a href="../../../../" class="md-nav__link">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
                   <span class="md-ellipsis">
                     Back to index
@@ -804,21 +880,21 @@
 <h1 id="2023-11-24-building-a-hypercube-interpolator">2023-11-24: Building a Hypercube Interpolator</h1>
 <div>
   <a href=https://github.com/jlogan03>
-    <img src=../assets/github.svg height="28" style="padding-right:20px">
+    <img src=../../assets/github.svg height="28" style="padding-right:20px">
   </a>
 
   <a href=https://hachyderm.io/@ponderingpothos>
-    <img src=../assets/mastodon.svg width="105" height="25">
+    <img src=../../assets/mastodon.svg width="105" height="25">
   </a>
 
   <b style="word-space:2em">&nbsp;&nbsp;</b>
   <a href=https://bsky.app/profile/ponderingpothos.bsky.social>
-    <img src=../assets/bluesky.svg width="115" height="28">
+    <img src=../../assets/bluesky.svg width="115" height="28">
   </a>
 
   <b style="word-space:2em">&nbsp;&nbsp;</b>
   <a href=https://jlogan.dev/feed_rss_created.xml>
-    <img src=../assets/rss.svg width="28" height="28">
+    <img src=../../assets/rss.svg width="28" height="28">
   </a>
 </div>
 
@@ -955,7 +1031,7 @@ or rectilinear grid that I've come across, and I had to choose one.</p>
 fairly performant, and making no compromise on correctness or generality.
 The idea is to interpolate on one axis at a time, projecting the grid cell into
 lower dimensions until finally arriving at a point.</p>
-<p><img src="../assets/2023-11-24/3d_recursive.jpeg" alt="3d recursive method" width="200"/></p>
+<p><img src="assets/2023-11-24/3d_recursive.jpeg" alt="3d recursive method" width="200"/></p>
 <p>It's easy enough to imagine how this recursive method would generalize to
 extrapolation or to higher dimensions - do nothing, and it will handle
 those cases just fine.</p>
@@ -984,7 +1060,7 @@ intended to give an intuitive explanation of the behavior of the better methods.
 by the vector from the observation point to each grid cell vertex. This partitioning
 fully fills the grid cell. A multilinear interpolation can be obtained as the sum
 of the values at each grid cell multiplied by the area of the opposing sub-cell.</p>
-<p><img src="../assets/2023-11-24/2d_inner.jpg" alt="2d geometric method on interior of grid cell" width="200"/></p>
+<p><img src="assets/2023-11-24/2d_inner.jpg" alt="2d geometric method on interior of grid cell" width="200"/></p>
 <p>It's intended as an educational aid, but as an algorithm, it has some interesting
 properties that merit a harder look.</p>
 <p>First, the <strong>memory scaling is excellent</strong>: only <code>O(ndims)</code> stack usage is ever
@@ -1266,7 +1342,7 @@ us both the excessive summations and keep the abuses of notation between me
 and the graph paper. Visual depictions of computational geometry fare better than obfuscatory equation soup, anyway.</p>
 <h4 id="extrapolation-without-adjustment">Extrapolation without adjustment</h4>
 <p>Let's try extrapolating in 2D.</p>
-<p><img src="../assets/2023-11-24/2d_extrap.jpg" alt="2d geometric method extrapolated in corner region" width="200"/></p>
+<p><img src="assets/2023-11-24/2d_extrap.jpg" alt="2d geometric method extrapolated in corner region" width="200"/></p>
 <p>Well, that didn't work - at least not without some extra handling.</p>
 <h4 id="extrapolation-by-extending-the-grid">Extrapolation by extending the grid?</h4>
 <p>One option would be to extend the grid cell to include the full area including the
@@ -1306,7 +1382,7 @@ but it's easy enough to find the area of the nonlinear region and remove it.
 This removal process is, conveniently, still an O(1) process for each
 vertex of the grid cell, so while it makes extrapolation slightly slower,
 it doesn't change the overall perf scaling.</p>
-<p><img src="../assets/2023-11-24/2d_extrap_corrected.jpg" alt="2d geometric method extrapolated in corner region, with corrections" width="200"/></p>
+<p><img src="assets/2023-11-24/2d_extrap_corrected.jpg" alt="2d geometric method extrapolated in corner region, with corrections" width="200"/></p>
 <h3 id="extending-the-geometric-method-to-higher-dimensions">Extending the geometric method to higher dimensions</h3>
 <p>Well, that's settled, right? It's not, but you get to find out the way I found out -
 after slogging through a 3D implementation.</p>
@@ -1314,25 +1390,25 @@ after slogging through a 3D implementation.</p>
 <p>To start, we'll look at a point that's on one face of the grid cell, so that
 we can see what's going on without a forest of lines getting in the way,
 and leaving two of the sub-cells un-shaded to unclutter the diagram.</p>
-<p><img src="../assets/2023-11-24/3d_inner.jpg" alt="3d geometric method, a simple case on the interior" width="200"/></p>
+<p><img src="assets/2023-11-24/3d_inner.jpg" alt="3d geometric method, a simple case on the interior" width="200"/></p>
 <p>So far, so good. With a bit of staring and thinking, it's clear that this produces the
 same behavior as the 2D version as the observation point moves around the face of the
 cube.</p>
 <p>As it moves to the interior of the cube, things get a little more detailed.</p>
-<p><img src="../assets/2023-11-24/3d_inner_2.jpg" alt="3d geometric method, a simple case on the interior" width="200"/></p>
+<p><img src="assets/2023-11-24/3d_inner_2.jpg" alt="3d geometric method, a simple case on the interior" width="200"/></p>
 <p>Here I'm only shading two sub-cells again to keep the clutter down, but it's clear to see
 that the partitioning still fills the space, and the volume of each sub-cell scales
 linearly with the observation point's position on each axis.</p>
 <p>Anyway, it's all working well so far! Let's see how the fixes from the 2D method hold up
 under extrapolation in a side region.</p>
-<p><img src="../assets/2023-11-24/3d_extrap_side.jpg" alt="3d geometric method, extrapolating in a side region" width="200"/></p>
+<p><img src="assets/2023-11-24/3d_extrap_side.jpg" alt="3d geometric method, extrapolating in a side region" width="200"/></p>
 <p>Looks good! Only two of the regions are shaded again, but from this, we can
 already tell that negating the contribution from the points on the interior
 of the grid will have the intended effect, same as in 2D.</p>
 <p>Next, a look at the corner region, where we can exercise the fixes that zero-out
 the contribution from the entirely-inside vertex and trim the nonlinear region.</p>
 <h4 id="a-problem-in-higher-dimensions">A problem in higher dimensions</h4>
-<p><img src="../assets/2023-11-24/3d_extrap_corner.jpg" alt="3d geometric method, extrapolating in a corner region" width="200"/></p>
+<p><img src="assets/2023-11-24/3d_extrap_corner.jpg" alt="3d geometric method, extrapolating in a corner region" width="200"/></p>
 <p>Uh-oh. Only shading the nonlinear region(s) this time, because that's the catch:
 there isn't just one kind of nonlinear region, and the fix based on the 2D method
 only capture the cubic region, not the quadratic regions.</p>
@@ -1539,10 +1615,10 @@ Next on the list, in any particular order that I find inspiration, are:</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": ["search.suggest"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["search.suggest", "navigation.indexes"], "search": "../../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>

@@ -8,29 +8,29 @@
       
       
       
-        <link rel="canonical" href="https://jlogan.dev/2023/10/21/2023-10-21-array-expressions-without-allocation/">
+        <link rel="canonical" href="https://jlogan.dev/blog/2023/10/21/2023-10-21-array-expressions-without-allocation/">
       
       
       
         <link rel="next" href="../../../11/24/2023-11-24-building-a-hypercube-interpolator/">
       
       
-        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../feed_rss_created.xml">
-        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../../feed_rss_updated.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../../../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../../../assets/logo.svg">
+      <link rel="icon" href="../../../../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>2023-10-21: Array Expressions without Allocation - jlogan</title>
+        <title>2023-10-21: Array Expressions without Allocation - James Logan's Personal Site</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -49,9 +49,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -103,9 +103,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="jlogan" class="md-header__button md-logo" aria-label="jlogan" data-md-component="logo">
+    <a href="../../../../.." title="James Logan&#39;s Personal Site" class="md-header__button md-logo" aria-label="James Logan's Personal Site" data-md-component="logo">
       
-  <img src="../../../../assets/logo.svg" alt="logo">
+  <img src="../../../../../assets/logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -116,7 +116,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            jlogan
+            James Logan's Personal Site
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -216,12 +216,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="jlogan" class="md-nav__button md-logo" aria-label="jlogan" data-md-component="logo">
+    <a href="../../../../.." title="James Logan&#39;s Personal Site" class="md-nav__button md-logo" aria-label="James Logan's Personal Site" data-md-component="logo">
       
-  <img src="../../../../assets/logo.svg" alt="logo">
+  <img src="../../../../../assets/logo.svg" alt="logo">
 
     </a>
-    jlogan
+    James Logan's Personal Site
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -230,19 +230,15 @@
       
   
   
-    
   
   
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      <a href="../../../.." class="md-nav__link">
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Blog
+    About Me
     
   </span>
   
@@ -256,9 +252,72 @@
       
   
   
+    
+  
   
   
     
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
     
     
     
@@ -267,10 +326,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
   
@@ -283,8 +342,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Archive
           </label>
@@ -321,14 +380,23 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -337,10 +405,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   
@@ -353,8 +421,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Categories
           </label>
@@ -430,6 +498,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -537,7 +613,7 @@
           <nav class="md-nav md-nav--primary">
             <div class="md-post__back">
               <div class="md-nav__title md-nav__container">
-                <a href="../../../.." class="md-nav__link">
+                <a href="../../../../" class="md-nav__link">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
                   <span class="md-ellipsis">
                     Back to index
@@ -609,21 +685,21 @@
 <h1 id="2023-10-21-array-expressions-without-allocation">2023-10-21: Array Expressions without Allocation</h1>
 <div>
   <a href=https://github.com/jlogan03>
-    <img src=../assets/github.svg height="28" style="padding-right:20px">
+    <img src=../../assets/github.svg height="28" style="padding-right:20px">
   </a>
 
   <a href=https://hachyderm.io/@ponderingpothos>
-    <img src=../assets/mastodon.svg width="105" height="25">
+    <img src=../../assets/mastodon.svg width="105" height="25">
   </a>
 
   <b style="word-space:2em">&nbsp;&nbsp;</b>
   <a href=https://bsky.app/profile/ponderingpothos.bsky.social>
-    <img src=../assets/bluesky.svg width="115" height="28">
+    <img src=../../assets/bluesky.svg width="115" height="28">
   </a>
 
   <b style="word-space:2em">&nbsp;&nbsp;</b>
   <a href=https://jlogan.dev/feed_rss_created.xml>
-    <img src=../assets/rss.svg width="28" height="28">
+    <img src=../../assets/rss.svg width="28" height="28">
   </a>
 </div>
 
@@ -931,10 +1007,10 @@ supports this napkin estimate:</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": ["search.suggest"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["search.suggest", "navigation.indexes"], "search": "../../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>
