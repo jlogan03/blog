@@ -17,9 +17,15 @@ categories:
   <a href=https://hachyderm.io/@ponderingpothos>
     <img src=../assets/mastodon.svg width="105" height="25">
   </a>
+
   <b style="word-space:2em">&nbsp;&nbsp;</b>
   <a href=https://bsky.app/profile/ponderingpothos.bsky.social>
     <img src=../assets/bluesky.svg width="115" height="28">
+  </a>
+
+  <b style="word-space:2em">&nbsp;&nbsp;</b>
+  <a href=https://jlogan.dev/feed_rss_created.xml>
+    <img src=../assets/rss.svg width="28" height="28">
   </a>
 </div>
 
