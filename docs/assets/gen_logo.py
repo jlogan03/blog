@@ -16,9 +16,10 @@ if __name__ == "__main__":
 
     fig, ax = plt.subplots(figsize=(6.0, 6.0 / 1.414))
 
-    ax.plot(x, y_line_left, color="k", linewidth=2.0)
-    ax.plot(x, y_line_right, color="k", linewidth=2.0)
-    ax.plot(x, y_parabola, color="k", linewidth=2.0)
+    lw = 12
+    ax.plot(x, y_line_left, color="k", linewidth=lw)
+    ax.plot(x, y_line_right, color="k", linewidth=lw)
+    ax.plot(x, y_parabola, color="k", linewidth=lw)
 
     upper_envelope = np.minimum(y_line_left, y_line_right)
     region_mask = y_parabola <= upper_envelope
@@ -40,6 +41,9 @@ if __name__ == "__main__":
     ax.set_xticks([])
     ax.set_yticks([])
 
+    for side in ['top','bottom','left','right']:
+        ax.spines[side].set_linewidth(lw)
+
     # Save base figure
     fig.savefig(output_path, dpi=300, bbox_inches="tight", transparent=True, format="svg")
 
@@ -48,7 +52,7 @@ if __name__ == "__main__":
     # The saved SVG is not quite proper XML, otherwise this would be easy to automate
     style = """
     <style type="text/css">
-    @media (prefers-color-scheme: light) {
+    @media (prefers-color-scheme: dark) {
         svg { filter: invert(93%) hue-rotate(180deg); background-color: transparent !important; }
         image { filter: invert(100%) hue-rotate(180deg) saturate(1.25); }
     }

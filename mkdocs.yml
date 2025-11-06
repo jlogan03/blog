@@ -35,8 +35,8 @@ theme:
       # This doesn't actually map to anything, but causes it to fail and fall back on colors in extra.css
       primary: asdf
       accent: asdf
-  # logo: assets/logo_light.png
-  # favicon: assets/logo_minimal.svg
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
   icon:
     repo: fontawesome/brands/git-alt
   features:
