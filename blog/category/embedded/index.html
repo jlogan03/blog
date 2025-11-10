@@ -786,15 +786,15 @@ Python extension library, or similar.</p>
 <p>By default, rustc targets CPUs from 2001.
 For both scientific computing and realtime systems, it's fair to target newer machines.</p>
 <p>To target about 2008 onward,</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>[target.&#39;cfg(target_arch = &quot;x86_64&quot;)&#39;]
+<div class="language-text highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>[target.&#39;cfg(any(target_arch = &quot;x86_64&quot;, target_arch = &quot;x64&quot;))&#39;]
 </span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>rustflags = [&quot;-C&quot;, &quot;target-feature=+fma&quot;]  # incl. SSE4 and AVX
 </span></code></pre></div>
 <p>Or, for about 2013 onward,</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>[target.&#39;cfg(target_arch = &quot;x86_64&quot;)&#39;]
+<div class="language-text highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>[target.&#39;cfg(any(target_arch = &quot;x86_64&quot;, target_arch = &quot;x64&quot;))&#39;]
 </span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>rustflags = [&quot;-C&quot;, &quot;target-feature=+avx2,+fma]
 </span></code></pre></div>
 <p>In a few years, when AVX512 (released 2016) has become more common, this list might look like</p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>[target.&#39;cfg(target_arch = &quot;x86_64&quot;)&#39;]
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>[target.&#39;cfg(any(target_arch = &quot;x86_64&quot;, target_arch = &quot;x64&quot;))&#39;]
 </span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>rustflags = [&quot;-C&quot;, &quot;target-feature=+avx2,+fma,+avx512f]
 </span></code></pre></div>
 although, as of 2025, AVX512 can cause excessive latency and heating for some use-cases.</p>
