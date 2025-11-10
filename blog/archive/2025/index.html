@@ -761,7 +761,7 @@ Next, we'll look at how to write code to use these for massive speedups.</p>
 <h3 id="vectorization-two-ways"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#vectorization-two-ways">Vectorization Two Ways</a></h3>
 <p>Now that we've got vector instructions, let's use them.</p>
 <h4 id="primer"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#primer">Primer</a></h4>
-<p>As a brief primer on vectorization: the term refers literally to the use of SIMD
+<p>As a brief primer on vectorization: the term refers to the use of SIMD
 (single instruction multiple data) aka vector instructions to perform multiple float
 operations at once independent of threading.
 Vectorization is associated with the benefit of reading from sequential and/or
@@ -772,7 +772,7 @@ The combined effect of both is typically a 5-10x speedup.</p>
 is an excellent recipe for what I'll call "Type 1" vectorization.</p>
 <ul>
 <li>Type 1 (numpy, ndarray etc): simple loops performing one operation on each datum</li>
-<li>Type 2 (InterpN): unsimple loops performing as many operations as possible on each datum</li>
+<li>Type 2 (InterpN): complex loops performing as many operations as possible on each datum</li>
 </ul>
 <p>Both methods rely on the autovectorizer and require careful elimination of bounds checks.</p>
 <h4 id="eliminating-allocation"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#eliminating-allocation">Eliminating Allocation</a></h4>
