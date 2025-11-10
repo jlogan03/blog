@@ -25,7 +25,7 @@
     
     
       
-        <title>Blog - James Logan's Personal Site</title>
+        <title>James Logan's Blog - James Logan's Personal Site</title>
       
     
     
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#blog" class="md-skip">
+        <a href="#james-logans-blog" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Blog
+              James Logan's Blog
             
           </span>
         </div>
@@ -318,6 +318,8 @@
       
         
       
+        
+      
     
     
     
@@ -348,6 +350,31 @@
             Archive
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -545,6 +572,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#2025-11-09-interpn-fast-interpolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2025-11-09 InterpN: Fast Interpolation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2023-11-24-building-a-hypercube-interpolator" class="md-nav__link">
     <span class="md-ellipsis">
       2023-11-24: Building a Hypercube Interpolator
@@ -574,8 +610,388 @@
   <div class="md-content" data-md-component="content">
     <div class="md-content__inner">
       <header class="md-typeset">
-        <h1 id="blog">Blog</h1>
+        <h1 id="james-logans-blog">James Logan's Blog</h1>
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2025-11-09 00:00:00+00:00">November 9, 2025</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/scientific-computing/" class="md-meta__link">Scientific Computing</a>, 
+              <a href="category/embedded/" class="md-meta__link">Embedded</a>, 
+              <a href="category/no-std/" class="md-meta__link">no-std</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              10 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="2025-11-09-interpn-fast-interpolation"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/">2025-11-09 InterpN: Fast Interpolation</a></h2>
+<p>InterpN is a low-latency numerical interpolation library for realtime and
+bare-metal embedded systems, written in Rust.
+It remains the first and only of its kind in this domain.</p>
+<p>Because of the performance constraints of a bare-metal target, InterpN has
+achieved excellent application-level throughput and found use in
+scientific computing via
+the <a href="https://crates.io/crates/interpn">Rust crate</a> 
+and <a href="https://pypi.org/project/interpn/">Python bindings</a>.</p>
+<h3 id="results"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/#results">Results</a></h3>
+<p>InterpN achieves up to 200x speedup over the state of the art (scipy)
+for N-dimensional interpolation.</p>
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>                <div id="b949459a-632a-4ea0-aba6-f6ed20184b57" class="plotly-graph-div" style="height:450px; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("b949459a-632a-4ea0-aba6-f6ed20184b57")) {                    Plotly.newPlot(                        "b949459a-632a-4ea0-aba6-f6ed20184b57",                        [{"line":{"color":"black","width":3},"marker":{"size":8,"symbol":"circle"},"mode":"lines","name":"InterpN MultilinearRegular","showlegend":false,"x":[1,2,3,4,5,6],"y":[30.17390667743378,22.411591523314268,58.903506621021094,83.65093997127397,126.90356660054115,204.32345723671898],"type":"scatter","xaxis":"x","yaxis":"y"},{"fill":"toself","fillcolor":"rgba(139, 196, 59, 0.25)","hoverinfo":"skip","line":{"width":0},"mode":"lines","showlegend":false,"x":[1,2,3,4,5,6,6,5,4,3,2,1],"y":[30.17390667743378,22.411591523314268,58.903506621021094,83.65093997127397,126.90356660054115,204.32345723671898,1.0,1.0,1.0,1.0,1.0,1.0],"type":"scatter","xaxis":"x","yaxis":"y"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Number of Dimensions"},"showline":true,"linecolor":"black","linewidth":1,"mirror":true,"ticks":"outside","tickcolor":"black","showgrid":false,"zeroline":false},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Speedup vs. Scipy"},"showline":true,"linecolor":"black","linewidth":1,"mirror":true,"ticks":"outside","tickcolor":"black","showgrid":false,"zeroline":false},"shapes":[{"line":{"color":"gray","dash":"dot"},"type":"line","x0":0,"x1":1,"xref":"x domain","y0":1.0,"y1":1.0,"yref":"y"}],"title":{"text":"InterpN Speedup vs. Scipy\u003cbr\u003eLinear, 1 Observation Point","y":0.97,"yanchor":"top"},"margin":{"t":60,"l":60,"r":200,"b":90},"height":450,"plot_bgcolor":"rgba(0,0,0,0)","paper_bgcolor":"rgba(0,0,0,0)"},                        {"responsive": true}                    )                };                            </script>        </div>
+
+<p>Similar speedups are obtained for large batch inputs,
+with more modest (about 10x) speedups for cubic methods.</p>
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>                <div id="53d37d15-6566-4b81-babb-664e41ab1267" class="plotly-graph-div" style="height:450px; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("53d37d15-6566-4b81-babb-664e41ab1267")) {                    Plotly.newPlot(                        "53d37d15-6566-4b81-babb-664e41ab1267",                        [{"fill":"toself","fillcolor":"rgba(139, 196, 59, 0.25)","hoverinfo":"skip","line":{"width":0},"mode":"lines","showlegend":false,"x":[1,10,50,100,500,1000,10000,10000,1000,500,100,50,10,1],"y":[0.00953886677431348,0.07819058906877895,0.21349364732025128,0.27814886110868087,0.3684078251090965,0.3743186046639217,0.3811369447418181,0.0461120756750539,0.0424366954364383,0.029845855137771497,0.009422686925349453,0.005041248404783249,0.0010704633203754699,0.00011538831236003602],"type":"scatter","xaxis":"x","yaxis":"y"},{"legendgroup":"Linear","legendgrouptitle":{"text":"Linear"},"line":{"color":"black","dash":"solid","width":2},"marker":{"size":8,"symbol":"square"},"mode":"lines+markers","name":"Scipy RegularGridInterpolator Linear","opacity":1.0,"showlegend":true,"x":[1,10,50,100,500,1000,10000],"y":[0.00011538831236003602,0.0010704633203754699,0.005041248404783249,0.009422686925349453,0.029845855137771497,0.0424366954364383,0.0461120756750539],"type":"scatter","xaxis":"x","yaxis":"y"},{"legendgroup":"Linear","legendgrouptitle":{"text":"Linear"},"line":{"color":"black","dash":"dash","width":2},"marker":{"size":8,"symbol":"circle"},"mode":"lines","name":"InterpN MultilinearRegular","opacity":1.0,"showlegend":true,"x":[1,10,50,100,500,1000,10000],"y":[0.00953886677431348,0.07819058906877895,0.21349364732025128,0.27814886110868087,0.3684078251090965,0.3743186046639217,0.3811369447418181],"type":"scatter","xaxis":"x","yaxis":"y"},{"legendgroup":"Linear","legendgrouptitle":{"text":"Linear"},"line":{"color":"black","dash":"dot","width":2},"marker":{"size":8,"symbol":"circle"},"mode":"lines","name":"InterpN MultilinearRectilinear","opacity":1.0,"showlegend":true,"x":[1,10,50,100,500,1000,10000],"y":[0.007938492167993413,0.06267496902803582,0.15933066033663698,0.20008725943339972,0.25441866402673674,0.2589942216503112,0.26654226214868454],"type":"scatter","xaxis":"x","yaxis":"y"},{"legendgroup":"Linear","legendgrouptitle":{"text":"Linear"},"line":{"color":"black","dash":"dashdot","width":2},"marker":{"size":8,"symbol":"circle"},"mode":"lines","name":"InterpN NearestRegular","opacity":1.0,"showlegend":true,"x":[1,10,50,100,500,1000,10000],"y":[0.009744570514353634,0.09091640594170596,0.33146264401121245,0.500797313511729,0.8390386820998589,0.9271275545217996,1.0],"type":"scatter","xaxis":"x","yaxis":"y"},{"legendgroup":"Linear","legendgrouptitle":{"text":"Linear"},"line":{"color":"black","dash":"longdash","width":2},"marker":{"size":8,"symbol":"circle"},"mode":"lines","name":"InterpN NearestRectilinear","opacity":1.0,"showlegend":true,"x":[1,10,50,100,500,1000,10000],"y":[0.007903475302642042,0.06683139999184108,0.1924258539198457,0.25011837788127156,0.33678884666114484,0.3559756787805742,0.36871101144134094],"type":"scatter","xaxis":"x","yaxis":"y"},{"fill":"toself","fillcolor":"rgba(139, 196, 59, 0.25)","hoverinfo":"skip","line":{"width":0},"mode":"lines","showlegend":false,"x":[1,10,50,100,500,1000,10000,10000,1000,500,100,50,10,1],"y":[0.1546344609011084,0.6369766076796461,0.9364625863176107,1.0,0.8472554231978235,0.8405643603926809,0.8442580210535163,0.18449933477960725,0.18006625595557835,0.17767301636275967,0.1622329863551974,0.14377053845292406,0.07866993805898312,0.010930205860883039],"type":"scatter","xaxis":"x2","yaxis":"y2"},{"legendgroup":"Cubic","legendgrouptitle":{"text":"Cubic"},"line":{"color":"black","dash":"solid","width":2},"marker":{"size":8,"symbol":"square"},"mode":"lines+markers","name":"Scipy RegularGridInterpolator Cubic","opacity":1.0,"showlegend":true,"x":[1,10,50,100,500,1000,10000],"y":[0.010930205860883039,0.07866993805898312,0.14377053845292406,0.1622329863551974,0.17767301636275967,0.18006625595557835,0.18449933477960725],"type":"scatter","xaxis":"x2","yaxis":"y2"},{"legendgroup":"Cubic","legendgrouptitle":{"text":"Cubic"},"line":{"color":"black","dash":"dash","width":2},"marker":{"size":8,"symbol":"circle"},"mode":"lines","name":"InterpN MulticubicRegular","opacity":1.0,"showlegend":true,"x":[1,10,50,100,500,1000,10000],"y":[0.1546344609011084,0.6369766076796461,0.9364625863176107,1.0,0.8472554231978235,0.8405643603926809,0.8442580210535163],"type":"scatter","xaxis":"x2","yaxis":"y2"},{"legendgroup":"Cubic","legendgrouptitle":{"text":"Cubic"},"line":{"color":"black","dash":"dot","width":2},"marker":{"size":8,"symbol":"circle"},"mode":"lines","name":"InterpN MulticubicRectilinear","opacity":1.0,"showlegend":true,"x":[1,10,50,100,500,1000,10000],"y":[0.1255643365919027,0.3345294994938987,0.37621455371209045,0.3789918142883618,0.3190913200472875,0.310365227728848,0.29144340780239997],"type":"scatter","xaxis":"x2","yaxis":"y2"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"type":"log","showline":true,"linecolor":"black","linewidth":1,"mirror":true,"ticks":"outside","tickcolor":"black","showgrid":false,"zeroline":false},"yaxis":{"anchor":"x","domain":[0.625,1.0],"title":{"text":"Normalized Throughput"},"type":"log","showline":true,"linecolor":"black","linewidth":1,"mirror":true,"ticks":"outside","tickcolor":"black","showgrid":false,"zeroline":false},"xaxis2":{"anchor":"y2","domain":[0.0,1.0],"title":{"text":"Number of Observation Points"},"type":"log","showline":true,"linecolor":"black","linewidth":1,"mirror":true,"ticks":"outside","tickcolor":"black","showgrid":false,"zeroline":false},"yaxis2":{"anchor":"x2","domain":[0.0,0.375],"type":"log","showline":true,"linecolor":"black","linewidth":1,"mirror":true,"ticks":"outside","tickcolor":"black","showgrid":false,"zeroline":false},"annotations":[{"font":{"size":16},"showarrow":false,"text":"Linear","x":0.5,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"Cubic","x":0.5,"xanchor":"center","xref":"paper","y":0.375,"yanchor":"bottom","yref":"paper"}],"title":{"text":"Interpolation on 20x...x20 4D Grid\u003cbr\u003eWith Preallocated Output","y":0.97,"yanchor":"top"},"margin":{"t":80,"l":60,"r":200,"b":90},"legend":{"orientation":"v","yanchor":"top","y":1.0,"x":1.02,"xanchor":"left"},"height":450,"plot_bgcolor":"rgba(0,0,0,0)","paper_bgcolor":"rgba(0,0,0,0)"},                        {"responsive": true}                    )                };                            </script>        </div>
+
+<p>These benchmarks graciously exclude the cost of initialization of scipy's methods,
+which allocate, do a linear solve, and perform other preparation during initialization.</p>
+<p>By contrast, InterpN can be called directly on a reference to the data at any time with no
+initialization penalty.</p>
+<h3 id="motivation"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/#motivation">Motivation</a></h3>
+<p>Interpolation is one of the most common tasks in scientific computing
+and realtime/embedded systems.</p>
+<p>Between these two domains, usage falls into two broad categories</p>
+<ul>
+<li>Small batch / low latency (optimization, realtime, embedded)</li>
+<li>Large batch / high throughput (visualization, fluid/material property lookups, grid data remapping)</li>
+</ul>
+<p>InterpN targets the first category, but excels in both.</p>
+<h3 id="the-algorithm"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/#the-algorithm">The Algorithm</a></h3>
+<p>The combination of low latency, high throughput, and bare-metal compatibility
+is achieved through a (bounded) recursive algorithm.</p>
+<p>The concept itself is easy: do 1D interpolation on one axis at a time.
+After visiting each of the <code>N</code> dimensions, you arrive at the final interpolated value.</p>
+<p>The trick to making it efficient is to formulate the data access as a tree of depth N
+instead of as an N-cube:</p>
+<p><img alt="algorithm diagram" src="assets/2025-11-07/algo.svg" /></p>
+<p>This method extends to higher dimensions by deepening the tree, and
+applies to linear as well as cubic methods by changing the degree of the tree
+and the 1D interpolation kernel.</p>
+<p>This algorithm is vaguely related to the recursive
+<a href="https://en.wikipedia.org/wiki/De_Casteljau%27s_algorithm">de Casteljau's algorithm</a>
+and <a href="https://en.wikipedia.org/wiki/De_Boor%27s_algorithm">de Boor's algorithm</a>.
+In practice, it looks nothing like either one and shares no implementation details.</p>
+<p>The 1D cubic spline evaluation uses <a href="https://en.wikipedia.org/wiki/Horner%27s_method">Horner's method</a>
+to minimize the total number of FLOPs and roundoff events.</p>
+<p>In an <a href="2023/11/24/2023-11-24-building-a-hypercube-interpolator/#2023-11-24-building-a-hypercube-interpolator">earlier post</a>,
+I tabled the recursive algorithm to avoid heap allocation.
+Since then, more careful thought resulted in the tree formulation.</p>
+<h3 id="performance-hygiene"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/#performance-hygiene">Performance Hygiene</a></h3>
+<p>There are some things we can do to improve performance without touching the code.</p>
+<p>These settings will be used when building your crate directly as a binary,
+Python extension library, or similar.</p>
+<h4 id="optimizations-codegen-units-and-lto"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/#optimizations-codegen-units-and-lto">Optimizations, codegen-units, and LTO</a></h4>
+<p>First, configure the release profile in <code>Cargo.toml</code>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[profile.release]
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>codegen-units = 1       # Optimize the whole crate together
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>lto = true              # Reduces binary size + small speedup
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>overflow-checks = true  # Free reliability!
+</span></code></pre></div>
+<h4 id="x86-instruction-sets"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/#x86-instruction-sets">X86 Instruction Sets</a></h4>
+<p>Next, configure compiler flags in <code>.cargo/config.toml</code>.</p>
+<p>By default, rustc targets CPUs from 2001.
+For both scientific computing and realtime systems, it's fair to target newer machines.</p>
+<p>To target about 2008 onward,</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[target.&#39;cfg(any(target_arch = &quot;x86_64&quot;, target_arch = &quot;x64&quot;))&#39;]
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>rustflags = [&quot;-C&quot;, &quot;target-feature=+fma&quot;]  # incl. SSE4 and AVX
+</span></code></pre></div>
+<p>Or, for about 2013 onward,</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>[target.&#39;cfg(any(target_arch = &quot;x86_64&quot;, target_arch = &quot;x64&quot;))&#39;]
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>rustflags = [&quot;-C&quot;, &quot;target-feature=+sse3,+ssse3,+sse4.1,+sse4.2,+popcnt,+cmpxchg16b,+avx,+avx2,+fma,+bmi1,+bmi2,+lzcnt,+pclmulqdq,+movbe&quot;]
+</span></code></pre></div>
+<p>These settings allow rustc to produce modern 
+<a href="https://en.wikipedia.org/wiki/Single_instruction,_multiple_data">vector (SIMD) instructions</a>
+for x86 processors.
+Next, we'll look at how to write code to use these for massive speedups.</p>
+<h3 id="vectorization-two-ways"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/#vectorization-two-ways">Vectorization Two Ways</a></h3>
+<p>Now that we've got vector instructions, let's use them.</p>
+<h4 id="primer"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/#primer">Primer</a></h4>
+<p>As a brief primer on vectorization: the term refers literally to the use of SIMD
+(single instruction multiple data) aka vector instructions to perform multiple float
+operations at once independent of threading.
+Vectorization is associated with the benefit of reading from sequential and/or
+cache-lane-aligned memory addresses for efficient reads from RAM, although in a
+strict sense, this is a distinct benefit of the patterns used to produce vector instructions.
+The combined effect of both is typically a 5-10x speedup.</p>
+<p>Nick Wilcox's <a href="https://www.nickwilcox.com/blog/autovec/#auto-vectorization">auto-vectorizer tutorial</a>
+is an excellent recipe for what I'll call "Type 1" vectorization.</p>
+<ul>
+<li>Type 1 (numpy, ndarray etc): simple loops performing one operation on each datum</li>
+<li>Type 2 (InterpN): unsimple loops performing as many operations as possible on each datum</li>
+</ul>
+<p>Both methods rely on the autovectorizer and require careful elimination of bounds checks.</p>
+<h4 id="eliminating-allocation"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/#eliminating-allocation">Eliminating Allocation</a></h4>
+<p>For example, take the expression <code>a = b * c^2; d = b^2 + c^3; e = a + d;</code>.</p>
+<p>In a Type 1 vectorized approach,</p>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// With ndarrays b, c</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">let</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">powi</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w">          </span><span class="c1">// Allocates 2 times</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kd">let</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">powi</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">powi</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w">  </span><span class="c1">// Allocates 3 times</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kd">let</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w">                  </span><span class="c1">// Allocates again</span>
+</span></code></pre></div>
+<p>Each individual operation is well-vectorized and readable, <em>but</em></p>
+<ul>
+<li>⚠️ This produces slow traffic back-and-forth to RAM</li>
+<li>⚠️ Extra allocations increase latency and total RAM usage</li>
+<li>⚠️ The compiler and CPU can only optimize one operation at a time<ul>
+<li><code>c^2</code> is not reused between the calculation of <code>a</code> and <code>d</code></li>
+<li><code>b^2</code> won't be pipelined alongside <code>c^2</code></li>
+<li>...and so on. Even for such a small expression, there are many missed optimizations!</li>
+</ul>
+</li>
+<li>⚠️ Bounds checks are repeated for each operation</li>
+</ul>
+<p>A Type 2 approach would look like this:</p>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// With slices b, c</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="fm">assert!</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">len</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">len</span><span class="p">())</span><span class="w">      </span><span class="c1">// Pull bounds check forward</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="mf">0.0</span><span class="p">;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">len</span><span class="p">()];</span><span class="w">  </span><span class="c1">// Allocate once</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1">// Unidiomatic, but we checked bounds, so it&#39;s OK to index.</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">0</span><span class="o">..</span><span class="n">e</span><span class="p">.</span><span class="n">len</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="n">bi</span><span class="p">,</span><span class="w"> </span><span class="n">ci</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ci</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ci</span><span class="p">;</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">bi</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ci</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ci</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ci</span><span class="p">;</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">  </span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">d</span><span class="p">;</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>and produces higher overall throughput by resolving all those issues.</p>
+<ul>
+<li>✅ Minimum possible RAM accesses and heap allocations</li>
+<li>✅ Compiler automatically reuses duplicate values</li>
+<li>✅ CPU can execute independent operations concurrently without threading</li>
+<li>✅ Bounds checks are only performed once</li>
+<li>✅ Compiler generates vector instructions<ul>
+<li>Both spanning sequential indices and within the scalar expression</li>
+</ul>
+</li>
+</ul>
+<p>Finally, to produce a Type 2 pattern, we don't actually write down the entire
+scalar expression in a loop like that example. Instead, we can simply rely
+on inlining to do it for us.</p>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">// ...</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="cp">#[inline]</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">fn</span><span class="w"> </span><span class="nf">my_expr</span><span class="p">(</span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="kt">f64</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">:</span><span class="w"> </span><span class="kt">f64</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="kt">f64</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">d</span><span class="p">;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">}</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1">// ...</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">0</span><span class="o">..</span><span class="n">e</span><span class="p">.</span><span class="n">len</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">  </span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">my_expr</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="careful-branching-cache-locality"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/#careful-branching-cache-locality">Careful Branching &amp; Cache-Locality</a></h4>
+<p>InterpN defers between 7 distinct cases for cubic interpolation:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>out                     out
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>---|---|---|---|---|---|--- Grid
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a> 2   2   3   3   3   2   2  Order of interpolant between grid points
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a> 1                       1  Extrapolation with linearize_extrapolation
+</span></code></pre></div>
+<p>This is enabled by a conspicous benefit of the Type 2 pattern:
+robustness to branching in the loop.</p>
+<p>In a Type 1 pattern, branches in the loop disrupt autovectorization,
+cause cache misses, and obliterate performance. This drives implementations
+like scipy's <code>pchip</code> to pre-calculate knot coefficients during initialization.</p>
+<p>Meanwhile, branching (carefully) in a Type 2 pattern is <em>totally okay</em>
+as long as all the data and procedures required for both branches
+are present in cache, and the need to allocate and calculate coefficients during
+initialization is eliminated.</p>
+<h3 id="fused-multiply-add"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/#fused-multiply-add">Fused Multiply-Add</a></h3>
+<p>FMA allows combining <code>a * x + b</code> into a single operation <code>a.mul_add(x, b)</code>
+with a single roundoff event, increasing throughput and decreasing floating-point error.</p>
+<h4 id="when-to-use-fma"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/#when-to-use-fma">When to Use FMA</a></h4>
+<p>FMA is not available as a hardware instruction on all CPUs.
+Sometimes, even when it is available (as with the Cortex M7 microcontroller),
+the increased latency may be unacceptable.</p>
+<p>As a rule of thumb, FMA is usually beneficial for desktop applications,
+but usually detrimental for microcontrollers.</p>
+<h4 id="how-to-use-fma"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/#how-to-use-fma">How to Use FMA</a></h4>
+<p>To support the user of a library in choosing whether or not FMA is good for their
+application, a feature flag in <code>Cargo.toml</code> that's not associated with any dependencies:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>[features]
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>fma = []
+</span></code></pre></div>
+<p>Then, at each location that could benefit from hardware FMA,
+use it behind a feature flag:</p>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">// Horner&#39;s method</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="cp">#[cfg(not(feature = </span><span class="s">&quot;fma&quot;</span><span class="cp">))]</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kd">let</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">c1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">c2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c3</span><span class="p">));</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="cp">#[cfg(feature = </span><span class="s">&quot;fma&quot;</span><span class="cp">)]</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="kd">let</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c3</span><span class="p">.</span><span class="n">mul_add</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">c2</span><span class="p">).</span><span class="n">mul_add</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">c1</span><span class="p">).</span><span class="n">mul_add</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">y0</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="a-brief-aside-about-libm"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/#a-brief-aside-about-libm">A Brief Aside about libm</a></h3>
+<p>Some math functions in Rust defer to system math libraries and produce inconsistent behavior
+between platforms. For functions like <code>sqrt</code>, <code>log</code>, and other transcendentals,
+make sure to use <code>libm</code> for a pure-rust implementation that is much more consistent and reliable.</p>
+<h3 id="traversing-unrealized-trees"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/#traversing-unrealized-trees">Traversing Unrealized Trees</a></h3>
+<p>Recall the tree that we're traversing:</p>
+<p><img alt="tree diagram" src="assets/2025-11-07/tree.svg" /></p>
+<p>The key to eliminating allocation in this tree formulation is to recognize 
+that <strong>we never need to actually <em>build</em> the tree</strong>.</p>
+<p>Two distinct evaluations patterns are used by InterpN to bypass fully realizing the tree:
+<a href="2025/11/09/2025-11-09-interpn-fast-interpolation/#bounded-recursion">bounded recursion</a> for large number of dimensions,
+and <a href="2025/11/09/2025-11-09-interpn-fast-interpolation/#const-unrolling">const-unrolling</a> otherwise.</p>
+<h4 id="bounded-recursion"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/#bounded-recursion">Bounded Recursion</a></h4>
+<p>We can traverse the tree by bounded recursion, using stack frames to automatically expand the
+storage required to visit each node.</p>
+<p>This allows us to realize the minimum storage to represent a path
+through the tree in <code>N</code> dimensions with a footprint of size <code>F</code> (<code>O(F*N)</code>),
+which is a massive improvement over realizing the entire cube (<code>O(F^N)</code>).</p>
+<p>Pros</p>
+<ul>
+<li>✅ <code>O(F*N)</code> storage</li>
+<li>✅ Easy to relate to the interpolation method</li>
+<li>✅ Quick to compile</li>
+<li>✅ One function can support different numbers of dimensions</li>
+</ul>
+<p>Cons</p>
+<ul>
+<li>⚠️ Slow due to use of stack frames (still faster than scipy, but could be better)</li>
+<li>⚠️ Statically un-analyzable call stack due to recursion (not so good for embedded)</li>
+<li>⚠️ The recursive function can't be fully inlined; we could be helping the compiler more</li>
+</ul>
+<h4 id="const-unrolling"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/#const-unrolling">Const-Unrolling</a></h4>
+<p>Alternatively, we can reformulate the recursion as a for-loop over a fixed number of dimensions <code>N</code>
+using const generics and <code>crunchy::unroll!</code> to flatten the entire tree into a single stack frame
+at compile-time.</p>
+<p>Const-unrolling with a parametrized bound looks like this:</p>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">// With `const N: usize`</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="fm">assert!</span><span class="p">(</span><span class="n">N</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">crunchy</span><span class="p">::</span><span class="n">unroll</span><span class="o">!</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">0</span><span class="o">..</span><span class="n">N</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">      </span><span class="c1">// Loop expanded at compile-time</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Const-unrolling can be applied to the entire traversal of the dependency tree when evaluating an interpolation,
+because for a given number of dimensions and footprint size, that tree always looks exactly the same.</p>
+<p>Pros</p>
+<ul>
+<li>✅ <code>O(F*N)</code> storage</li>
+<li>✅ Very fast; compiler can optimize over the entire calculation in a single stack frame</li>
+<li>✅ Statically-analyzable call stack</li>
+<li>✅ Const indexing (everything except float math and index offsets happens at compile-time)</li>
+</ul>
+<p>Cons</p>
+<ul>
+<li>⚠️ Long compile times for large <code>N</code></li>
+<li>⚠️ Requires compiling for an exact number of dimensions</li>
+<li>⚠️ Harder to relate to the interpolation method (it doesn't <em>look</em> like a recursion)</li>
+</ul>
+<h3 id="profile-guided-optimization"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/#profile-guided-optimization">Profile-Guided Optimization</a></h3>
+<p>PGO is the practice of doing a two-pass build to allow the compiler to do optimizations
+with some knowledge of how the program will actually be run. Speedups are typically
+in the 20%-100% range, but can vary far outside that range.</p>
+<h4 id="pgo-for-rust-binaries"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/#pgo-for-rust-binaries">PGO for Rust Binaries</a></h4>
+<p>Jakub Beránek's <a href="https://kobzol.github.io/rust/cargo/2023/07/28/rust-cargo-pgo.html">blog post</a>
+provides an excellent introduction to PGO for Rust binaries, and his <code>cargo-pgo</code> tool
+streamlines the process described there.</p>
+<p>The workflow for Rust binaries is like so:</p>
+<ol>
+<li>Build the Rust binary with PGO instrumentation</li>
+<li>Run representative workloads using that binary to collect usage data</li>
+<li>Combine multiple raw profiles into a single combined profile</li>
+<li>Rebuild the binary using the profile to enhance compiler optimizations</li>
+</ol>
+<h4 id="pgo-for-python-extension-libraries"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/#pgo-for-python-extension-libraries">PGO for Python Extension Libraries</a></h4>
+<p>For a Python extension library, the procedure is similar:</p>
+<ol>
+<li>Build the extension library with PGO instrumentation</li>
+<li>Run a Python profile workflow</li>
+<li>Combine raw profiles</li>
+<li>Store the profile</li>
+<li>Use the stored profile to optimize the Python extension when building wheels to deploy to PyPI</li>
+</ol>
+<p>For InterpN, steps 1-4 look like so:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Build instrumented wheel</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>cargo<span class="w"> </span>clean
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>uv<span class="w"> </span>cache<span class="w"> </span>clean
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>maturin
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>rm<span class="w"> </span>-rf<span class="w"> </span>dist/
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="nv">UV_NO_BUILD_CACHE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>--no-sync<span class="w"> </span>maturin<span class="w"> </span>build<span class="w"> </span>--compatibility<span class="w"> </span>pypi<span class="w"> </span>--out<span class="w"> </span>dist<span class="w"> </span>--verbose<span class="w"> </span>--<span class="w"> </span><span class="s2">&quot;-Cprofile-generate=</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">/scripts/pgo-profiles/pgo.profraw&quot;</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="c1"># Install instrumented wheel</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>dist/<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.whl&#39;</span><span class="k">)</span><span class="o">[</span>pydantic<span class="o">]</span><span class="w"> </span>--group<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--group<span class="w"> </span>bench<span class="w"> </span>--reinstall
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="c1"># Run reference workload to generate profile</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>uv<span class="w"> </span>run<span class="w"> </span>--no-sync<span class="w"> </span>./scripts/profile_workload.py
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="c1"># Merge profiles</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>/usr/lib/llvm-21/bin/llvm-profdata<span class="w"> </span>merge<span class="w"> </span>-o<span class="w"> </span>scripts/pgo-profiles/pgo.profdata<span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>scripts/pgo-profiles/pgo.profraw<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.profraw&#39;</span><span class="k">)</span>
+</span></code></pre></div>
+<p>Step 5 is implemented as a minor edit to <code>maturin</code> actions workflow's <code>args</code> input to set the path to the profile data:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build wheels</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PyO3/maturin-action@v1</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="nt">with</span><span class="p">:</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="nt">target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ matrix.platform.target }}</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">--release --out dist --find-interpreter --verbose -- &quot;-Cprofile-use=${{github.workspace}}/scripts/pgo-profiles/pgo.profdata&quot; &quot;-Cllvm-args=-pgo-warn-missing-function&quot;</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="nt">manylinux</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
+</span></code></pre></div>
+<h4 id="pgos-sharp-edges"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/#pgos-sharp-edges">PGO's Sharp Edges</a></h4>
+<ul>
+<li>LLVM version must match between<ul>
+<li>rustc used locally to generate the profiles</li>
+<li>LLVM used to merge profiles</li>
+<li>and rustc used during deployment</li>
+</ul>
+</li>
+<li>PGO profiles are not portable between platforms<ul>
+<li>They won't cause a crash during build, but will silently have no effect</li>
+</ul>
+</li>
+<li>PGO is <em>very</em> sensitive to choice of profile workload<ul>
+<li>Don't profile against unit tests or benchmarks! This will likely make the program slower under real use</li>
+</ul>
+</li>
+<li>PGO profiles must be passed in as an <em>absolute</em> path; relative paths are not expanded by rustc</li>
+<li>No configuration in <code>Cargo.toml</code> or <code>.cargo/config.toml</code> can result in PGO being used automatically</li>
+</ul>
+<p>As always, go carefully, but do go.</p>
+<h3 id="conclusion"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/#conclusion">Conclusion</a></h3>
+<h4 id="no-std-is-closely-related-to-scientific-computing"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/#no-std-is-closely-related-to-scientific-computing">#[no-std] Is Closely Related to Scientific Computing</a></h4>
+<p>no-std compatibility in scientific computing libraries may seem tangential to the task at hand,
+but ultimately produces excellent performance, allows reusing the same code for embedded and applications,
+and, as of recently, allows reuse as a GPU kernel as well.</p>
+<h4 id="this-is-not-a-one-off"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/#this-is-not-a-one-off">This Is Not a One-Off</a></h4>
+<p>These techniques are not specific to interpolation,
+and have been applied with successfully to signal processing, analytic electromagnetics,
+fluid mechanics, structural mechanics, and computational geometry.</p>
+<h4 id="next-steps"><a class="toclink" href="2025/11/09/2025-11-09-interpn-fast-interpolation/#next-steps">Next Steps</a></h4>
+<ul>
+<li>PGO for platforms other than linux</li>
+<li>Thread parallelism with <code>rayon</code><ul>
+<li>This is incredibly easy, but just hasn't been necessary yet</li>
+<li>We'll use another core when we're done with the first one</li>
+</ul>
+</li>
+<li>Cross-platform GPU kernel extension using <code>rust-gpu</code> and <code>wgpu</code><ul>
+<li>Because it is no-std compatible, InterpN is already GPU-ready! Just needs some plumbing</li>
+</ul>
+</li>
+</ul>
+    
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
@@ -1475,7 +1891,7 @@ supports this napkin estimate:</p>
 
 
 <h4>Cookie consent</h4>
-<p>I use cookies to recognize repeated visits and post traffic.</p>
+<p>I use cookies to recognize repeated visits and to understand post traffic.</p>
 <input class="md-toggle" type="checkbox" id="__settings" >
 <div class="md-consent__settings">
   <ul class="task-list">
@@ -1526,7 +1942,7 @@ supports this napkin estimate:</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["search.suggest", "navigation.indexes"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["search.suggest", "navigation.indexes", "content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
