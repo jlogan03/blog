@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://jlogan.dev/blog/2025/11/09/2025-11-09-interpn-fast-interpolation/">
+        <link rel="canonical" href="https://jlogan.dev/blog/2025/11/10/2025-11-10-interpn-fast-interpolation/">
       
       
         <link rel="prev" href="../../../../2023/11/24/2023-11-24-building-a-hypercube-interpolator/">
@@ -23,7 +23,7 @@
     
     
       
-        <title>2025-11-09 InterpN: Fast Interpolation - James Logan's Personal Site</title>
+        <title>2025-11-10 InterpN: Fast Interpolation - James Logan's Personal Site</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#2025-11-09-interpn-fast-interpolation" class="md-skip">
+        <a href="#2025-11-10-interpn-fast-interpolation" class="md-skip">
           Skip to content
         </a>
       
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2025-11-09 InterpN: Fast Interpolation
+              2025-11-10 InterpN: Fast Interpolation
             
           </span>
         </div>
@@ -871,7 +871,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2025-11-09 00:00:00+00:00" class="md-ellipsis">November 9, 2025</time>
+                        <time datetime="2025-11-10 00:00:00+00:00" class="md-ellipsis">November 10, 2025</time>
                       </div>
                     </li>
                     
@@ -919,7 +919,7 @@
 
 
 
-<h1 id="2025-11-09-interpn-fast-interpolation">2025-11-09 InterpN: Fast Interpolation</h1>
+<h1 id="2025-11-10-interpn-fast-interpolation">2025-11-10 InterpN: Fast Interpolation</h1>
 <p>InterpN is a low-latency numerical interpolation library for realtime and
 bare-metal embedded systems, written in Rust.
 It remains the first and only of its kind in this domain.</p>
@@ -1258,11 +1258,11 @@ streamlines the process described there.</p>
 <h3 id="no-std-is-closely-related-to-scientific-computing">#[no-std] Is Closely Related to Scientific Computing</h3>
 <p>no-std compatibility in scientific computing libraries may seem tangential to the task at hand,
 but ultimately produces excellent performance, allows reusing the same code for embedded and applications,
-and, as of recently, allows reuse as a GPU kernel as well.</p>
+and, as of recently, allows <a href="https://github.com/Rust-GPU/rust-gpu">reuse as a GPU kernel</a> as well.</p>
 <h3 id="this-is-not-a-one-off">This Is Not a One-Off</h3>
 <p>These techniques are not specific to interpolation,
-and have been applied with successfully to signal processing, analytic electromagnetics,
-fluid mechanics, structural mechanics, and computational geometry.</p>
+and have been applied with successfully to signal processing, realtime controls,
+analytic electromagnetics, fluid mechanics, structural mechanics, and computational geometry.</p>
 <h3 id="next-steps">Next Steps</h3>
 <ul>
 <li>PGO for platforms other than linux</li>

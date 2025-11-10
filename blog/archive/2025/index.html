@@ -414,9 +414,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#2025-11-09-interpn-fast-interpolation" class="md-nav__link">
+  <a href="#2025-11-10-interpn-fast-interpolation" class="md-nav__link">
     <span class="md-ellipsis">
-      2025-11-09 InterpN: Fast Interpolation
+      2025-11-10 InterpN: Fast Interpolation
     </span>
   </a>
   
@@ -627,9 +627,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#2025-11-09-interpn-fast-interpolation" class="md-nav__link">
+  <a href="#2025-11-10-interpn-fast-interpolation" class="md-nav__link">
     <span class="md-ellipsis">
-      2025-11-09 InterpN: Fast Interpolation
+      2025-11-10 InterpN: Fast Interpolation
     </span>
   </a>
   
@@ -656,7 +656,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2025-11-09 00:00:00+00:00">November 9, 2025</time></li>
+          <time datetime="2025-11-10 00:00:00+00:00">November 10, 2025</time></li>
         
           <li class="md-meta__item">
             in
@@ -678,7 +678,7 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="2025-11-09-interpn-fast-interpolation"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/">2025-11-09 InterpN: Fast Interpolation</a></h2>
+    <h2 id="2025-11-10-interpn-fast-interpolation"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/">2025-11-10 InterpN: Fast Interpolation</a></h2>
 <p>InterpN is a low-latency numerical interpolation library for realtime and
 bare-metal embedded systems, written in Rust.
 It remains the first and only of its kind in this domain.</p>
@@ -687,7 +687,7 @@ achieved excellent application-level throughput and found use in
 scientific computing via
 the <a href="https://crates.io/crates/interpn">Rust crate</a> 
 and <a href="https://pypi.org/project/interpn/">Python bindings</a>.</p>
-<h3 id="results"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#results">Results</a></h3>
+<h3 id="results"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#results">Results</a></h3>
 <p>InterpN achieves up to 200x speedup over the state of the art (Scipy)
 for N-dimensional interpolation.</p>
 <div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
@@ -705,7 +705,7 @@ initialization penalty.</p>
 <p>Finally, InterpN produces about
 <a href="https://interpnpy.readthedocs.io/en/latest/perf/">8 orders of magnitude less floating-point error</a>
 than Scipy.</p>
-<h3 id="motivation"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#motivation">Motivation</a></h3>
+<h3 id="motivation"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#motivation">Motivation</a></h3>
 <p>Interpolation is one of the most common tasks in scientific computing
 and realtime/embedded systems.</p>
 <p>Between these two domains, usage falls into two broad categories</p>
@@ -714,7 +714,7 @@ and realtime/embedded systems.</p>
 <li>Large batch / high throughput (visualization, fluid/material property lookups, grid data remapping)</li>
 </ul>
 <p>InterpN targets the first category, but excels in both.</p>
-<h3 id="the-algorithm"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#the-algorithm">The Algorithm</a></h3>
+<h3 id="the-algorithm"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#the-algorithm">The Algorithm</a></h3>
 <p>The combination of low latency, high throughput, and bare-metal compatibility
 is achieved through a (bounded) recursive algorithm.</p>
 <p>The concept itself is easy: do 1D interpolation on one axis at a time.
@@ -734,18 +734,18 @@ to minimize the total number of FLOPs and roundoff events.</p>
 <p>In an <a href="../../2023/11/24/2023-11-24-building-a-hypercube-interpolator/#2023-11-24-building-a-hypercube-interpolator">earlier post</a>,
 I tabled the recursive algorithm to avoid heap allocation.
 Since then, more careful thought resulted in the tree formulation.</p>
-<h3 id="performance-hygiene"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#performance-hygiene">Performance Hygiene</a></h3>
+<h3 id="performance-hygiene"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#performance-hygiene">Performance Hygiene</a></h3>
 <p>There are some things we can do to improve performance without touching the code.</p>
 <p>These settings will be used when building your crate directly as a binary,
 Python extension library, or similar.</p>
-<h4 id="optimizations-codegen-units-and-lto"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#optimizations-codegen-units-and-lto">Optimizations, codegen-units, and LTO</a></h4>
+<h4 id="optimizations-codegen-units-and-lto"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#optimizations-codegen-units-and-lto">Optimizations, codegen-units, and LTO</a></h4>
 <p>First, configure the release profile in <code>Cargo.toml</code>.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>[profile.release]
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>codegen-units = 1       # Optimize the whole crate together
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>lto = true              # Reduces binary size + small speedup
 </span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>overflow-checks = true  # Free reliability!
 </span></code></pre></div>
-<h4 id="x86-instruction-sets"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#x86-instruction-sets">x86 Instruction Sets</a></h4>
+<h4 id="x86-instruction-sets"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#x86-instruction-sets">x86 Instruction Sets</a></h4>
 <p>Next, configure compiler flags in <code>.cargo/config.toml</code>.</p>
 <p>By default, rustc targets CPUs from 2001.
 For both scientific computing and realtime systems, it's fair to target newer machines.</p>
@@ -767,9 +767,9 @@ although, as of 2025, AVX512 can cause excessive latency and heating for some us
 for x86 processors. The rustc documentation contains the
 <a href="https://doc.rust-lang.org/reference/attributes/codegen.html#x86-or-x86_64">full list of available x86 instruction sets</a>.</p>
 <p>Next, we'll look at how to write code to use these for massive speedups.</p>
-<h3 id="vectorization-two-ways"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#vectorization-two-ways">Vectorization Two Ways</a></h3>
+<h3 id="vectorization-two-ways"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#vectorization-two-ways">Vectorization Two Ways</a></h3>
 <p>Now that we've got vector instructions, let's use them.</p>
-<h4 id="primer"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#primer">Primer</a></h4>
+<h4 id="primer"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#primer">Primer</a></h4>
 <p>As a brief primer on vectorization: the term refers to the use of SIMD
 (single instruction multiple data) aka vector instructions to perform multiple float
 operations at once independent of threading.
@@ -784,7 +784,7 @@ is an excellent recipe for what I'll call "Type 1" vectorization.</p>
 <li>Type 2 (InterpN): complex loops performing as many operations as possible on each datum</li>
 </ul>
 <p>Both methods rely on the autovectorizer and require careful elimination of bounds checks.</p>
-<h4 id="eliminating-allocation"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#eliminating-allocation">Eliminating Allocation</a></h4>
+<h4 id="eliminating-allocation"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#eliminating-allocation">Eliminating Allocation</a></h4>
 <p>For example, take the expression <code>a = b * c^2; d = b^2 + c^3; e = a + d;</code>.</p>
 <p>In a Type 1 vectorized approach,</p>
 <div class="language-rust highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1">// With ndarrays b, c</span>
@@ -844,7 +844,7 @@ on inlining to do it for us.</p>
 </span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">  </span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">my_expr</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
 </span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="p">}</span>
 </span></code></pre></div>
-<h4 id="careful-branching-cache-locality"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#careful-branching-cache-locality">Careful Branching &amp; Cache-Locality</a></h4>
+<h4 id="careful-branching-cache-locality"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#careful-branching-cache-locality">Careful Branching &amp; Cache-Locality</a></h4>
 <p>InterpN defers between 7 distinct cases for cubic interpolation:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>out                     out
 </span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>---|---|---|---|---|---|--- Grid
@@ -860,16 +860,16 @@ like Scipy's <code>pchip</code> to pre-calculate knot coefficients during initia
 as long as all the data and procedures required for both branches
 are present in cache, and the need to allocate and calculate coefficients during
 initialization is eliminated.</p>
-<h3 id="fused-multiply-add"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#fused-multiply-add">Fused Multiply-Add</a></h3>
+<h3 id="fused-multiply-add"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#fused-multiply-add">Fused Multiply-Add</a></h3>
 <p>FMA allows combining <code>a * x + b</code> into a single operation <code>a.mul_add(x, b)</code>
 with a single roundoff event, increasing throughput and decreasing floating-point error.</p>
-<h4 id="when-to-use-fma"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#when-to-use-fma">When to Use FMA</a></h4>
+<h4 id="when-to-use-fma"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#when-to-use-fma">When to Use FMA</a></h4>
 <p>FMA is not available as a hardware instruction on all CPUs.
 Sometimes, even when it is available (as with the Cortex M7 microcontroller),
 the increased latency may be unacceptable.</p>
 <p>As a rule of thumb, FMA is usually beneficial for desktop applications,
 but usually detrimental for microcontrollers.</p>
-<h4 id="how-to-use-fma"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#how-to-use-fma">How to Use FMA</a></h4>
+<h4 id="how-to-use-fma"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#how-to-use-fma">How to Use FMA</a></h4>
 <p>To support the user of a library in choosing whether or not FMA is good for their
 application, a feature flag in <code>Cargo.toml</code> that's not associated with any dependencies:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>[features]
@@ -884,19 +884,19 @@ use it behind a feature flag:</p>
 </span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="cp">#[cfg(feature = </span><span class="s">&quot;fma&quot;</span><span class="cp">)]</span>
 </span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="kd">let</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c3</span><span class="p">.</span><span class="n">mul_add</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">c2</span><span class="p">).</span><span class="n">mul_add</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">c1</span><span class="p">).</span><span class="n">mul_add</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">y0</span><span class="p">);</span>
 </span></code></pre></div>
-<h3 id="a-brief-aside-about-libm"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#a-brief-aside-about-libm">A Brief Aside about libm</a></h3>
+<h3 id="a-brief-aside-about-libm"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#a-brief-aside-about-libm">A Brief Aside about libm</a></h3>
 <p>Some math functions in Rust defer to system math libraries and produce inconsistent behavior
 between platforms. For functions like <code>sqrt</code>, <code>log</code>, and other transcendentals,
 make sure to use <code>libm</code> for a pure-rust implementation that is much more consistent and reliable.</p>
-<h3 id="traversing-unrealized-trees"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#traversing-unrealized-trees">Traversing Unrealized Trees</a></h3>
+<h3 id="traversing-unrealized-trees"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#traversing-unrealized-trees">Traversing Unrealized Trees</a></h3>
 <p>Recall the tree that we're traversing:</p>
 <p><img alt="tree diagram" src="../../assets/2025-11-07/tree.svg" /></p>
 <p>The key to eliminating allocation in this tree formulation is to recognize 
 that <strong>we never need to actually <em>build</em> the tree</strong>.</p>
 <p>Two distinct evaluations patterns are used by InterpN to bypass fully realizing the tree:
-<a href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#bounded-recursion">bounded recursion</a> for large number of dimensions,
-and <a href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#const-unrolling">const-unrolling</a> otherwise.</p>
-<h4 id="bounded-recursion"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#bounded-recursion">Bounded Recursion</a></h4>
+<a href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#bounded-recursion">bounded recursion</a> for large number of dimensions,
+and <a href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#const-unrolling">const-unrolling</a> otherwise.</p>
+<h4 id="bounded-recursion"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#bounded-recursion">Bounded Recursion</a></h4>
 <p>We can traverse the tree by bounded recursion, using stack frames to automatically expand the
 storage required to visit each node.</p>
 <p>This allows us to realize the minimum storage to represent a path
@@ -915,7 +915,7 @@ which is a massive improvement over realizing the entire cube (<code>O(F^N)</cod
 <li>⚠️ Statically un-analyzable call stack due to recursion (not so good for embedded)</li>
 <li>⚠️ The recursive function can't be fully inlined; we could be helping the compiler more</li>
 </ul>
-<h4 id="const-unrolling"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#const-unrolling">Const-Unrolling</a></h4>
+<h4 id="const-unrolling"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#const-unrolling">Const-Unrolling</a></h4>
 <p>Alternatively, we can reformulate the recursion as a for-loop over a fixed number of dimensions <code>N</code>
 using const generics and <code>crunchy::unroll!</code> to flatten the entire tree into a single stack frame
 at compile-time.</p>
@@ -944,11 +944,11 @@ because for a given number of dimensions and footprint size, that tree always lo
 <li>⚠️ Requires compiling for an exact number of dimensions</li>
 <li>⚠️ Harder to relate to the interpolation method (it doesn't <em>look</em> like a recursion)</li>
 </ul>
-<h3 id="profile-guided-optimization"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#profile-guided-optimization">Profile-Guided Optimization</a></h3>
+<h3 id="profile-guided-optimization"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#profile-guided-optimization">Profile-Guided Optimization</a></h3>
 <p>PGO is the practice of doing a two-pass build to allow the compiler to do optimizations
 with some knowledge of how the program will actually be run. Speedups are typically
 in the 20%-100% range, but can vary far outside that range.</p>
-<h4 id="pgo-for-rust-binaries"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#pgo-for-rust-binaries">PGO for Rust Binaries</a></h4>
+<h4 id="pgo-for-rust-binaries"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#pgo-for-rust-binaries">PGO for Rust Binaries</a></h4>
 <p>Jakub Beránek's <a href="https://kobzol.github.io/rust/cargo/2023/07/28/rust-cargo-pgo.html">blog post</a>
 provides an excellent introduction to PGO for Rust binaries, and his <code>cargo-pgo</code> tool
 streamlines the process described there.</p>
@@ -959,7 +959,7 @@ streamlines the process described there.</p>
 <li>Combine multiple raw profiles into a single combined profile</li>
 <li>Rebuild the binary using the profile to enhance compiler optimizations</li>
 </ol>
-<h4 id="pgo-for-python-extension-libraries"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#pgo-for-python-extension-libraries">PGO for Python Extension Libraries</a></h4>
+<h4 id="pgo-for-python-extension-libraries"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#pgo-for-python-extension-libraries">PGO for Python Extension Libraries</a></h4>
 <p>For a Python extension library, the procedure is similar:</p>
 <ol>
 <li>Build the extension library with PGO instrumentation</li>
@@ -993,7 +993,7 @@ streamlines the process described there.</p>
 </span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">    </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">--release --out dist --find-interpreter --verbose -- &quot;-Cprofile-use=${{github.workspace}}/scripts/pgo-profiles/pgo.profdata&quot; &quot;-Cllvm-args=-pgo-warn-missing-function&quot;</span>
 </span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">    </span><span class="nt">manylinux</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
 </span></code></pre></div>
-<h4 id="pgos-sharp-edges"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#pgos-sharp-edges">PGO's Sharp Edges</a></h4>
+<h4 id="pgos-sharp-edges"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#pgos-sharp-edges">PGO's Sharp Edges</a></h4>
 <ul>
 <li>LLVM version must match between<ul>
 <li>rustc used locally to generate the profiles</li>
@@ -1013,16 +1013,16 @@ streamlines the process described there.</p>
 <li>No configuration in <code>Cargo.toml</code> or <code>.cargo/config.toml</code> can result in PGO being used automatically</li>
 </ul>
 <p>As always, go carefully, but do go.</p>
-<h3 id="conclusion"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#conclusion">Conclusion</a></h3>
-<h4 id="no-std-is-closely-related-to-scientific-computing"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#no-std-is-closely-related-to-scientific-computing">#[no-std] Is Closely Related to Scientific Computing</a></h4>
+<h3 id="conclusion"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#conclusion">Conclusion</a></h3>
+<h4 id="no-std-is-closely-related-to-scientific-computing"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#no-std-is-closely-related-to-scientific-computing">#[no-std] Is Closely Related to Scientific Computing</a></h4>
 <p>no-std compatibility in scientific computing libraries may seem tangential to the task at hand,
 but ultimately produces excellent performance, allows reusing the same code for embedded and applications,
-and, as of recently, allows reuse as a GPU kernel as well.</p>
-<h4 id="this-is-not-a-one-off"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#this-is-not-a-one-off">This Is Not a One-Off</a></h4>
+and, as of recently, allows <a href="https://github.com/Rust-GPU/rust-gpu">reuse as a GPU kernel</a> as well.</p>
+<h4 id="this-is-not-a-one-off"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#this-is-not-a-one-off">This Is Not a One-Off</a></h4>
 <p>These techniques are not specific to interpolation,
-and have been applied with successfully to signal processing, analytic electromagnetics,
-fluid mechanics, structural mechanics, and computational geometry.</p>
-<h4 id="next-steps"><a class="toclink" href="../../2025/11/09/2025-11-09-interpn-fast-interpolation/#next-steps">Next Steps</a></h4>
+and have been applied with successfully to signal processing, realtime controls,
+analytic electromagnetics, fluid mechanics, structural mechanics, and computational geometry.</p>
+<h4 id="next-steps"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#next-steps">Next Steps</a></h4>
 <ul>
 <li>PGO for platforms other than linux</li>
 <li>Thread parallelism with <code>rayon</code><ul>
