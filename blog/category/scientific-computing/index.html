@@ -1013,7 +1013,7 @@ streamlines the process described there.</p>
 <li>Build a second time using the profile to optimize the extension library</li>
 <li>Deploy to PyPI</li>
 </ol>
-<p>For InterpN, steps 1 and 5 are implemented as minor edits to <code>maturin</code> actions workflow's <code>args</code> input:</p>
+<p>For InterpN, steps 1 and 4 are implemented as minor edits to <code>maturin</code> actions workflow's <code>args</code> input:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Instrumented build</span>
 </span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="w">  </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PyO3/maturin-action@v1</span>
 </span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="w">  </span><span class="nt">with</span><span class="p">:</span>
