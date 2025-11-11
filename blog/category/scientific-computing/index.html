@@ -797,7 +797,7 @@ For both scientific computing and realtime systems, it's fair to target newer ma
 <p><div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>[target.&#39;cfg(any(target_arch = &quot;x86_64&quot;, target_arch = &quot;x64&quot;))&#39;]
 </span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>rustflags = [&quot;-C&quot;, &quot;target-feature=+avx2,+fma,+avx512f]
 </span></code></pre></div>
-although, as of 2025, AVX512 can cause excessive latency and heating for some use-cases.</p>
+although, as of 2025, AVX512's performance effects remain controversial.</p>
 <p>These settings allow rustc to produce modern 
 <a href="https://en.wikipedia.org/wiki/Single_instruction,_multiple_data">vector (SIMD) instructions</a>
 for x86 processors. The rustc documentation contains the
@@ -984,6 +984,15 @@ because for a given number of dimensions and footprint size, that tree always lo
 <p>PGO is the practice of doing a two-pass build to allow the compiler to do optimizations
 with some knowledge of how the program will actually be run. Speedups are typically
 in the 20%-100% range, but can vary far outside that range.</p>
+<p>InterpN's Python bindings ship with PGO for the most-common platforms:</p>
+<ul>
+<li>🚀 Linux (x86_64 and aarch64)</li>
+<li>🚀 MacOS (x86_64 and aarch64)</li>
+<li>🚀 Windows (x64)</li>
+</ul>
+<p>The procedure used by InterpN is
+<a href="https://github.com/jlogan03/interpn/blob/6eea50c9382d48a66dd52dc51f93a27c4a84a290/.github/workflows/release-python.yml#L18">very general</a>,
+and can be applied to nearly any Rust-Python project built with PyO3/Maturin.</p>
 <h4 id="pgo-for-rust-binaries"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#pgo-for-rust-binaries">PGO for Rust Binaries</a></h4>
 <p>Jakub Beránek's <a href="https://kobzol.github.io/rust/cargo/2023/07/28/rust-cargo-pgo.html">blog post</a>
 provides an excellent introduction to PGO for Rust binaries, and his <code>cargo-pgo</code> tool
@@ -1001,28 +1010,19 @@ streamlines the process described there.</p>
 <li>Build the extension library with PGO instrumentation</li>
 <li>Run a Python profile workflow</li>
 <li>Combine raw profiles</li>
-<li>Store the profile</li>
-<li>Use the stored profile to optimize the Python extension when building wheels to deploy to PyPI</li>
+<li>Build a second time using the profile to optimize the extension library</li>
+<li>Deploy to PyPI</li>
 </ol>
-<p>For InterpN, steps 1-4 look like so:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="c1"># Build instrumented wheel</span>
-</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>cargo<span class="w"> </span>clean
-</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>uv<span class="w"> </span>cache<span class="w"> </span>clean
-</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>maturin
-</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>rm<span class="w"> </span>-rf<span class="w"> </span>dist/
-</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a><span class="nv">UV_NO_BUILD_CACHE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>--no-sync<span class="w"> </span>maturin<span class="w"> </span>build<span class="w"> </span>--compatibility<span class="w"> </span>pypi<span class="w"> </span>--out<span class="w"> </span>dist<span class="w"> </span>--verbose<span class="w"> </span>--<span class="w"> </span><span class="s2">&quot;-Cprofile-generate=</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">/scripts/pgo-profiles/pgo.profraw&quot;</span>
-</span><span id="__span-37-7"><a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a>
-</span><span id="__span-37-8"><a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a><span class="c1"># Install instrumented wheel</span>
-</span><span id="__span-37-9"><a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>dist/<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.whl&#39;</span><span class="k">)</span><span class="o">[</span>pydantic<span class="o">]</span><span class="w"> </span>--group<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--group<span class="w"> </span>bench<span class="w"> </span>--reinstall
-</span><span id="__span-37-10"><a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a>
-</span><span id="__span-37-11"><a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a><span class="c1"># Run reference workload to generate profile</span>
-</span><span id="__span-37-12"><a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a>uv<span class="w"> </span>run<span class="w"> </span>--no-sync<span class="w"> </span>./scripts/profile_workload.py
-</span><span id="__span-37-13"><a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a>
-</span><span id="__span-37-14"><a id="__codelineno-37-14" name="__codelineno-37-14" href="#__codelineno-37-14"></a><span class="c1"># Merge profiles</span>
-</span><span id="__span-37-15"><a id="__codelineno-37-15" name="__codelineno-37-15" href="#__codelineno-37-15"></a>/usr/lib/llvm-21/bin/llvm-profdata<span class="w"> </span>merge<span class="w"> </span>-o<span class="w"> </span>scripts/pgo-profiles/pgo.profdata<span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>scripts/pgo-profiles/pgo.profraw<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.profraw&#39;</span><span class="k">)</span>
+<p>For InterpN, steps 1 and 5 are implemented as minor edits to <code>maturin</code> actions workflow's <code>args</code> input:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Instrumented build</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="w">  </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PyO3/maturin-action@v1</span>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="w">  </span><span class="nt">with</span><span class="p">:</span>
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="w">    </span><span class="nt">target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ matrix.platform.target }}</span>
+</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="w">    </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">--release --out dist --find-interpreter --verbose -- &quot;-Cprofile-generate=${PWD}/scripts/pgo-profiles/pgo.profraw&quot;</span>
+</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a><span class="w">    </span><span class="nt">manylinux</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
 </span></code></pre></div>
-<p>Step 5 is implemented as a minor edit to <code>maturin</code> actions workflow's <code>args</code> input to set the path to the profile data:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build wheels</span>
+<p>then, having run the workload and merged profiles,</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Optimized build</span>
 </span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="w">  </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PyO3/maturin-action@v1</span>
 </span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="w">  </span><span class="nt">with</span><span class="p">:</span>
 </span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="w">    </span><span class="nt">target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ matrix.platform.target }}</span>
@@ -1060,7 +1060,6 @@ and have been applied with successfully to signal processing, realtime controls,
 analytic electromagnetics, fluid mechanics, structural mechanics, and computational geometry.</p>
 <h4 id="next-steps"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#next-steps">Next Steps</a></h4>
 <ul>
-<li>PGO for platforms other than linux</li>
 <li>Thread parallelism with <code>rayon</code><ul>
 <li>This is incredibly easy, but just hasn't been necessary yet</li>
 <li>We'll use another core when we're done with the first one</li>
@@ -1070,6 +1069,7 @@ analytic electromagnetics, fluid mechanics, structural mechanics, and computatio
 <li>Because it is no-std compatible, InterpN is already GPU-ready! Just needs some plumbing</li>
 </ul>
 </li>
+<li>PGO for cross-compiled targets (via qemu? docker? self-hosted runners? TBD)</li>
 </ul>
     
   </div>
