@@ -1,0 +1,88 @@
+site_name: James Logan's Personal Site
+site_url: https://jlogan.dev
+# repo_url: https://github.com/jlogan03/blog
+# repo_name: blog
+copyright: Copyright &copy; 2025 James Logan
+
+extra:
+  social:
+    - icon: octicons/rss-16
+      link: https://jlogan.dev/feed_rss_created.xml
+    - icon: fontawesome/brands/mastodon
+      link: https://hachyderm.io/@ponderingpothos
+    - icon: fontawesome/brands/bluesky
+      link: https://bsky.app/profile/ponderingpothos.bsky.social
+    - icon: fontawesome/brands/github
+      link: https://github.com/jlogan03
+  consent:
+    title: Cookie consent
+    description: >-
+      I use cookies to recognize repeated visits and to understand post traffic.
+  analytics:
+    provider: google
+    property: G-PYQ9SVJZ2J
+
+theme:
+  name: material
+  # custom_dir: overrides
+  highlightjs: true
+  hljs_languages:
+    - python
+    - rust
+  palette:
+    - scheme: slate
+      # This doesn't actually map to anything, but causes it to fail and fall back on colors in extra.css
+      primary: asdf
+      accent: asdf
+
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
+  icon:
+    repo: fontawesome/brands/git-alt
+  features:
+    - search.suggest
+    - navigation.indexes
+    - content.code.copy
+
+nav:
+  - About Me: index.md
+  - Blog:
+    - blog/index.md
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  - blog:
+      blog_dir: ./blog
+      blog_toc: true
+  - rss:
+      match_path: ./posts/.* 
+      date_from_meta:
+        as_creation: date
+      categories:
+        - categories
+        - tags 
+  - search
+  - redirects:
+      redirect_maps:

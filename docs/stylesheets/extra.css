@@ -1,0 +1,8 @@
+:root {
+    --md-primary-fg-color: #8AC43B; /* Top bar background & side bar text */
+    --md-accent-fg-color: #A1D062; /* Top bar background & side bar text */
+}
+
+.plotly-graph-div {
+    filter: invert(100%) hue-rotate(180deg);
+}
