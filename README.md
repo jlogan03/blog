@@ -1,20 +1,7 @@
 # James Logan's Blog
 
-<div> 
-  <a href=https://hachyderm.io/@ponderingpothos>
-    <img src=./docs/assets/mastodon.svg width="105" height="25">
-  </a>
+ <a href=https://hachyderm.io/@ponderingpothos> <img src=./docs/assets/mastodon.svg width="105" height="18"> </a>    <a href=https://bsky.app/profile/ponderingpothos.bsky.social> <img src=./docs/assets/bluesky.svg width="115" height="20"> </a>    <b style="word-space:2em">&nbsp;&nbsp;</b> <a href=https://jlogan.dev/feed_rss_created.xml> <img src=./docs/assets/rss.svg width="28" height="20"> </a>
 
-  <b style="word-space:2em">&nbsp;&nbsp;</b>
-  <a href=https://bsky.app/profile/ponderingpothos.bsky.social>
-    <img src=./docs/assets/bluesky.svg width="115" height="28">
-  </a>
-
-  <b style="word-space:2em">&nbsp;&nbsp;</b>
-  <a href=https://jlogan.dev/feed_rss_created.xml>
-    <img src=./docs/assets/rss.svg width="28" height="28">
-  </a>
-</div>
 
 | Title                           | Topics            | Posted     | Last Modified |
 | -----                           |--------           | ------     | ------------- |
