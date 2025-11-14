@@ -789,8 +789,8 @@ is an excellent recipe for what I'll call "Type 1" vectorization.</p>
 <li>Type 2 (InterpN): complex loops performing as many operations as possible on each datum</li>
 <li>Type 3 (Strobe): array expressions on small stack buffers with large memory alignment</li>
 </ul>
-<p>All three methods rely on the autovectorizer and require careful elimination of bounds checks.</p>
 <p>The third method is described in more detail in an earlier post about <a href="../../2023/10/21/2023-10-21-array-expressions-without-allocation/">Strobe</a>.</p>
+<p>All three methods rely on the autovectorizer and require careful elimination of bounds checks.</p>
 <h4 id="eliminating-allocation"><a class="toclink" href="../../2025/11/10/2025-11-10-interpn-fast-interpolation/#eliminating-allocation">Eliminating Allocation</a></h4>
 <p>For example, take the expression <code>a = b * c^2; d = b^2 + c^3; e = a + d;</code>.</p>
 <p>In a Type 1 vectorized approach,</p>
