@@ -21,10 +21,11 @@ the [Rust crate](https://crates.io/crates/interpn)
 and [Python bindings](https://pypi.org/project/interpn/).
 
 Edited 2025-11-12 to add the x86-64-v3/v4 reference CPUs and improve formatting on mobile.
+Edited 2025-12-31 to update a plot and peak speedup number for version 0.9.1.
 
 ## Results
 
-InterpN achieves up to 200x speedup over the state of the art (Scipy)
+InterpN achieves up to 250x speedup over the state of the art (Scipy)
 for N-dimensional interpolation.
 
 --8<--
