@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://jlogan.dev/</loc>
-         <lastmod>2025-11-14</lastmod>
+         <lastmod>2025-12-31</lastmod>
     </url>
     <url>
          <loc>https://jlogan.dev/blog/</loc>
-         <lastmod>2025-11-14</lastmod>
+         <lastmod>2025-12-31</lastmod>
     </url>
     <url>
          <loc>https://jlogan.dev/blog/2025/11/10/2025-11-10-interpn-fast-interpolation/</loc>
-         <lastmod>2025-11-14</lastmod>
+         <lastmod>2025-12-31</lastmod>
     </url>
     <url>
          <loc>https://jlogan.dev/blog/2023/11/24/2023-11-24-building-a-hypercube-interpolator/</loc>
-         <lastmod>2025-11-14</lastmod>
+         <lastmod>2025-12-31</lastmod>
     </url>
     <url>
          <loc>https://jlogan.dev/blog/2023/10/21/2023-10-21-array-expressions-without-allocation/</loc>
-         <lastmod>2025-11-14</lastmod>
+         <lastmod>2025-12-31</lastmod>
     </url>
     <url>
          <loc>https://jlogan.dev/blog/archive/2025/</loc>
-         <lastmod>2025-11-14</lastmod>
+         <lastmod>2025-12-31</lastmod>
     </url>
     <url>
          <loc>https://jlogan.dev/blog/archive/2023/</loc>
-         <lastmod>2025-11-14</lastmod>
+         <lastmod>2025-12-31</lastmod>
     </url>
     <url>
          <loc>https://jlogan.dev/blog/category/scientific-computing/</loc>
-         <lastmod>2025-11-14</lastmod>
+         <lastmod>2025-12-31</lastmod>
     </url>
     <url>
          <loc>https://jlogan.dev/blog/category/embedded/</loc>
-         <lastmod>2025-11-14</lastmod>
+         <lastmod>2025-12-31</lastmod>
     </url>
     <url>
          <loc>https://jlogan.dev/blog/category/no-std/</loc>
-         <lastmod>2025-11-14</lastmod>
+         <lastmod>2025-12-31</lastmod>
     </url>
 </urlset>
