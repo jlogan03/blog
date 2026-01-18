@@ -1,6 +1,6 @@
 :root {
-    --md-primary-fg-color: #8AC43B; /* Top bar background & side bar text */
-    --md-accent-fg-color: #A1D062; /* Top bar background & side bar text */
+    --md-primary-fg-color: #3b76c4; /* Top bar background & side bar text */
+    --md-accent-fg-color: #6295d0; /* Top bar background & side bar text */
 }
 
 .plotly-graph-div {
